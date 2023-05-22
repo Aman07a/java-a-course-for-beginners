@@ -14,3 +14,222 @@ jshell> for( i =1; i<=10; i++) {
 7 * 8 = 56
 7 * 9 = 63
 7 * 10 = 70
+
+jshell> table = 8
+table ==> 8
+
+jshell> for( i =1; i<=10; i++) {
+   ...> System.out.printf("%d * %d = %d", table, i, table*i).println();
+   ...> }
+8 * 1 = 8
+8 * 2 = 16
+8 * 3 = 24
+8 * 4 = 32
+8 * 5 = 40
+8 * 6 = 48
+8 * 7 = 56
+8 * 8 = 64
+8 * 9 = 72
+8 * 10 = 80
+
+jshell> printMultiplicationTable(8)
+|  Error:
+|  cannot find symbol
+|    symbol:   method printMultiplicationTable(int)
+|  printMultiplicationTable(8)
+|  ^----------------------^
+
+jshell> System.out.prinln("Hello World")
+|  Error:
+|  cannot find symbol
+|    symbol:   method prinln(java.lang.String)
+|  System.out.prinln("Hello World")
+|  ^---------------^
+
+jshell> System.out.println("Hello World")
+Hello World
+
+jshell> System.out.prinln("Hello World");
+|  Error:
+|  cannot find symbol
+|    symbol:   method prinln(java.lang.String)
+|  System.out.prinln("Hello World");
+|  ^---------------^
+
+jshell> System.out.println("Hello World")
+Hello World
+
+jshell> System.out.println("Hello World")
+Hello World
+
+jshell> System.out.println("Hello World"); System.out.println("Hello World");
+Hello World
+Hello World
+
+jshell> clear()
+
+ 
+jshell> System.out.println("Hello World"); System.out.println("Hello World");
+Hello World
+Hello World
+
+jshell> void sayHelloWorldTwice(){
+   ...>    System.out.println("Hello World");
+   ...>    System.out.println("Hello World");
+   ...> }
+|  created method sayHelloWorldTwice()
+
+jshell> sayHelloWorldTwice()
+Hello World
+Hello World
+
+jshell> void sayHelloWorldThrice(){
+   ...>  System.out.println("Hello World");
+   ...>  System.out.println("Hello World");
+   ...>  System.out.println("Hello World");
+   ...> }
+|  created method sayHelloWorldThrice()
+
+jshell> sayHelloWorldThrice()
+Hello World
+Hello World
+Hello World
+
+jshell> void printLearningExperience() {
+   ...> System.out.println("I've created my first variable");
+   ...> System.out.println("I've created my first method");
+   ...> System.out.println("I've created my first loop");
+   ...> System.out.println("I'm excited to learn Java");
+   ...> }
+|  created method printLearningExperience()
+
+jshell> printLearningExperience()
+I've created my first variable
+I've created my first method
+I've created my first loop
+I'm excited to learn Java
+
+jshell> printLearningExperience
+|  Error:
+|  cannot find symbol
+|    symbol:   variable printLearningExperience
+|  printLearningExperience
+|  ^---------------------^
+
+jshell> printLearningExperience()
+I've created my first variable
+I've created my first method
+I've created my first loop
+I'm excited to learn Java
+
+jshell> void 2things() {
+   ...> }
+|  Error:
+|  illegal start of expression
+|  void 2things() {
+|  ^--^
+|  Error:
+|  ';' expected
+|  void 2things() {
+|      ^
+|  Error:
+|  ';' expected
+|  void 2things() {
+|                ^
+|  Error:
+|  cannot find symbol
+|    symbol:   method things()
+|  void 2things() {
+|        ^----^
+
+jshell> void void(){
+   ...> }
+|  Error:
+|  illegal start of expression
+|  void void(){
+|  ^--^
+|  Error:
+|  ';' expected
+|  void void(){
+|      ^
+|  Error:
+|  illegal start of expression
+|  void void(){
+|       ^--^
+|  Error:
+|  ';' expected
+|  void void(){
+|           ^
+
+jshell> void for(){
+|  Error:
+|  illegal start of expression
+|  void for(){
+|  ^--^
+|  Error:
+|  ';' expected
+|  void for(){
+|      ^
+|  Error:
+|  illegal start of expression
+|  void for(){
+|           ^
+|  Error:
+|  reached end of file while parsing
+|  void for(){
+|             ^
+|  Error:
+|  missing return statement
+|  void for(){
+|  ^---------^
+
+jshell> void if(){
+|  Error:
+|  illegal start of expression
+|  void if(){
+|  ^--^
+|  Error:
+|  ';' expected
+|  void if(){
+|      ^
+|  Error:
+|  illegal start of expression
+|  void if(){
+|          ^
+|  Error:
+|  reached end of file while parsing
+|  void if(){
+|            ^
+|  Error:
+|  missing return statement
+|  void if(){
+|  ^--------^
+
+jshell> void NameOfMethod(){
+   ...> }
+|  created method NameOfMethod()
+
+jshell> void nameOfMethod(){
+   ...> }
+|  created method nameOfMethod()
+
+jshell> clear()
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorld(int)
+|    void sayHelloWorld()
+|    void printMultipleTimes(int)
+|    void printMultipleTimes(int,String)
+|    void test()
+|    int ireturn()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> /remove
+|  No such command or snippet id: /remove
+|  Type /help for help.
