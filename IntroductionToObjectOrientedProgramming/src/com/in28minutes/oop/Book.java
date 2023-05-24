@@ -1,6 +1,7 @@
 package com.in28minutes.oop;
 
 public class Book {
+
 	private int noOfCopies;
 
 	public Book(int noOfCopies) {
