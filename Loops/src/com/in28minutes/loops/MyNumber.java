@@ -25,4 +25,14 @@ public class MyNumber {
 		return true;
 	}
 
+	public int sumUptoN() {
+		int sum = 0;
+
+		for (int i = 1; i <= number; i++) {
+			sum = sum + i;
+		}
+
+		return sum;
+	}
+
 }
