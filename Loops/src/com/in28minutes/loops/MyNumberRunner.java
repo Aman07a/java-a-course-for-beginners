@@ -10,6 +10,11 @@ public class MyNumberRunner {
 
 		int sum = number.sumUptoN();
 		System.out.println("sumUptoN " + sum);
+
+		int sumOfDivisors = number.sumOfDivisors();
+		System.out.println("sumOfDivisors " + sumOfDivisors);
+
+		number.printNumberTriangle();
 	}
 
 }
