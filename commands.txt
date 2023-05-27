@@ -99,3 +99,54 @@ clear()
 1 + 23
 1 + 2 + "3"
 "1" + 2 + 3
+System.out.println("Value is " + 20)
+System.out.println("Value is " + 20 + 20)
+System.out.println("Value is " + (20 + 20))
+String.join(",", "2", "3", "4")
+String.join(",", "A", "B","C")
+String.join(",", "A")
+String.join(",", "A", "B")
+"abcd".replace('a', 'z');
+"abcd".replace("ab", "xyz");
+String str = "jdsfja ";
+clear()
+"123" + "123" + "1234" + "123456"
+sb.append(" 123")
+sb
+sb
+sb.setCharAt(1,'e')
+sb
+StringBuilder sb = new StringBuilder("test");
+clear()
+Integer integer1 = new Integer("5234");
+Integer integer2 = new Integer("5234");
+clear()
+Integer i1 = new Integer(5);
+Integer i2 = new Integer(5);
+Integer i3 = Integer.valueOf(5);
+Integer i4 = Integer.valueOf(5);
+i1 == i2
+i3 == i4
+clear()
+Integer integer = Integer.valueOf("4567");
+int i = integer.intValue();
+Float f = Float.valueOf("12.45");
+f.floatValue()
+f.intValue()
+Integer eight = Integer.valueOf(8);
+Integer.toBinaryString(eight);
+Integer.toHexString(eight);
+Integer eightyEight = Integer.valueOf(88);
+Integer.toHexString(eightyEight);
+clear()
+seven++
+seven
+seven == sevenAgain
+Integer seven = 7;
+Integer sevenAgain = 7;
+seven == sevenAgain
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+Integer.SIZE
+Integer.BYTES
+clear()
