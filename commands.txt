@@ -150,3 +150,35 @@ Integer.MIN_VALUE
 Integer.SIZE
 Integer.BYTES
 clear()
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+clear()
+import java.time.*;
+today.getYear()
+today.getDayOfWeek()
+today.getDayOfMonth()
+today.getDayOfYear()
+today.getMonth()
+today.getMonthValue()
+today.isLeapYear()
+today.lengthOfYear()
+today.lengthOfMonth()
+today.plusDays(100)
+today.plusMonths(100)
+today.plusYears(100)
+today.minusYears(100)
+LocalDate hundredYearsBefore = today.minusYears(100);
+today
+LocalDateTime now = LocalDateTime.now();
+clear()
+LocalDate today = LocalDate.now();
+LocalDate yesterady = LocalDate.of(2018, 01, 31);
+LocalDate yesterday = LocalDate.of(2018, 01, 31);
+today
+yesterday
+today.withYear(2016)
+today.withDayOfMonth(20)
+today.withMonth(3)
+today.withDayOfYear(120)
+today.isBefore(yesterday)
+today.isAfter(yesterday)
