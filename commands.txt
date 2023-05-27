@@ -1,0 +1,22 @@
+class Planet {
+}
+Planet jupiter = new Planet();
+int i = 5;
+class Animal {
+    int id;
+    Animal(int id) {
+       this.id = id;
+    }
+}
+Animal nothing;
+nothing = cat
+nothing.id = 10
+cat.id
+nothing = dog
+nothing.id
+int j = i;
+j = 6
+i
+i == j
+j = 5
+i == j
