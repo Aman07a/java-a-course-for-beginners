@@ -1,6 +1,9 @@
 package com.in28minutes.arrays;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Student {
 
@@ -17,6 +20,29 @@ public class Student {
 
 	public int getNumberOfMarks() {
 		return marks.size();
+	}
+
+	public int getTotalSumOfMarks() {
+		int sum = 0;
+		for (int mark : marks) {
+			sum += mark;
+		}
+		return sum;
+	}
+
+	public int getMaximumMark() {
+		return Collections.max(marks);
+	}
+
+	public int getMinimumMark() {
+		return Collections.min(marks);
+	}
+
+	public BigDecimal getAverageMarks() {
+		int sum = getTotalSumOfMarks();
+		int number = getNumberOfMarks();
+
+		return new BigDecimal(sum).divide(new BigDecimal(number), 3, RoundingMode.UP);
 	}
 
 }
