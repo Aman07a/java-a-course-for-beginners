@@ -17,6 +17,20 @@ public class Fan {
 		this.color = color;
 	}
 
+	public void switchOn() {
+		this.isOn = true;
+		setSpeed((byte) 5);
+	}
+
+	public void switchOff() {
+		this.isOn = false;
+		setSpeed((byte) 0);
+	}
+
+	public void setSpeed(byte speed) {
+		this.speed = speed;
+	}
+
 	// print the state
 	@Override
 	public String toString() {
