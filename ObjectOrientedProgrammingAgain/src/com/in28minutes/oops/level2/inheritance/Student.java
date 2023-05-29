@@ -1,12 +1,12 @@
 package com.in28minutes.oops.level2.inheritance;
 
-public class Student {
+public class Student extends Person {
 
 	private String collegeName;
 	private int year;
 
 	public Student(String name, String collegeName) {
-		// super(name);
+		super(name);
 		this.collegeName = collegeName;
 	}
 

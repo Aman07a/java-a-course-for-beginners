@@ -1,6 +1,6 @@
 package com.in28minutes.oops.level2.inheritance;
 
-public class Person {
+public class Person extends Object {
 
 	private String name;
 	private String email;
