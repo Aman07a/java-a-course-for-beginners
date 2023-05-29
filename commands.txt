@@ -33,3 +33,46 @@ class Dog extends AbstractAnimal {
 Dog dog = new Dog();
 dog.bark()
 clear()
+abstract class AbstractTest {
+}
+abstract class Algorithm1 extends AbstractAlgorithm {
+}
+abstract class AbstractAlgorithm {
+     private int stepCount;
+     public int getStepCount() {
+          return stepCount();
+     }
+}
+clear()
+class Implementation implements Interface2 {
+   public void method2() { }
+   public void method1() { }
+}
+abstract class ImplementationAbstract implements Interface2 {
+   public void method1() { }
+}
+interface Interface3 {
+  int test = 5;
+}
+interface Interface4 {
+    default void print() {
+       System.out.println("default");
+    }
+}
+class Test implements Interface4 {
+}
+test.print()
+class Test1 implements Interface4 {
+   public void print() {
+      System.out.println("override");
+   }
+}
+Test1 test = new Test1();
+test.print()
+interface Interface1 {
+ void method1();
+}
+interface Interface2 {
+ void method2();
+}
+clear()
