@@ -67,3 +67,116 @@ jshell> wordsArrayList.remove("Dog")
 $35 ==> false
 
 jshell> clear()
+
+jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> for(int i=0; i < words.size(); i++) {
+   ...>      System.out.println(words.get(i));
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> for(String word:words) {
+   ...>      System.out.println(word);
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> Iterator wordsIterator = words.iterator();
+wordsIterator ==> java.util.AbstractList$Itr@3712b94
+
+jshell> while(wordsIterator.hasNext()) {
+   ...>       System.out.println(wordsIterator.next());
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsAl = new ArrayList<>(words);
+wordsAl ==> [Apple, Bat, Cat]
+
+jshell> for(String word:words) {
+   ...>    if(word.endsWith("at")
+   ...>       System.out.println(word);
+   ...> }
+|  Error:
+|  ')' expected
+|     if(word.endsWith("at")
+|                           ^
+
+jshell> for(String word:words) {
+   ...>    if(word.endsWith("at"))
+   ...>       System.out.println(word);
+   ...> }
+Bat
+Cat
+
+jshell> for(String word:wordsAl) {
+   ...>    if(word.endsWith("at")) {
+   ...>         words.remove(word);
+   ...>    }
+   ...> }
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableList.remove (ImmutableCollections.java:81)
+|        at (#50:3)
+
+jshell> for(String word:wordsAl) {
+   ...>    if(word.endsWith("at")) {
+   ...>         wordsAl.remove(word);
+   ...>    }
+   ...> }
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+ 
+ jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsAl = new ArrayList<>(words);
+wordsAl ==> [Apple, Bat, Cat]
+
+jshell> Iterator<String> iterator = wordsAl.iterator();
+iterator ==> java.util.ArrayList$Itr@467aecef
+
+jshell> while(iterator.hasNext()) {
+   ...>      if(iterator.next().endsWith("at")) {
+   ...>           iterator.remove();
+   ...>      }
+   ...> }
+
+jshell> wordsAl
+wordsAl ==> [Apple]
+
+jshell> clear()
+
+
+jshell> List value = List.of("A", 'A' , 1, 1.0)
+value ==> [A, A, 1, 1.0]
+
+jshell> value.get(2)
+$64 ==> 1
+
+jshell> value.get(2) instanceof Integer
+$65 ==> true
+
+jshell> value.get(1) instanceof Character
+$66 ==> true
+
+jshell> value.get(3) instanceof Double
+$67 ==> true
