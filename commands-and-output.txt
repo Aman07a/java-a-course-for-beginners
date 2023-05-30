@@ -180,3 +180,220 @@ $66 ==> true
 
 jshell> value.get(3) instanceof Double
 $67 ==> true
+
+jshell> List<String> textValues = List.of("A", 'A' , 1, 1.0)
+|  Error:
+|  incompatible types: inference variable E has incompatible bounds
+|      equality constraints: java.lang.String
+|      lower bounds: java.lang.Double,java.lang.Integer,java.lang.Character,java.lang.String
+|  List<String> textValues = List.of("A", 'A' , 1, 1.0);
+|                            ^------------------------^
+
+jshell> List<Integer> numbers = List.of(101,102,103,104,105);
+numbers ==> [101, 102, 103, 104, 105]
+
+jshell> numbers.indexOf(101);
+$69 ==> 0
+
+jshell> List<Integer> numbersAl = new ArrayList<>(numbers);
+numbersAl ==> [101, 102, 103, 104, 105]
+
+jshell> numbersAl.indexOf(101)
+$71 ==> 0
+
+jshell> numbersAl.remove(101);
+|  java.lang.IndexOutOfBoundsException thrown: Index 101 out-of-bounds for length 5
+|        at Preconditions.outOfBounds (Preconditions.java:64)
+|        at Preconditions.outOfBoundsCheckIndex (Preconditions.java:70)
+|        at Preconditions.checkIndex (Preconditions.java:248)
+|        at Objects.checkIndex (Objects.java:372)
+|        at ArrayList.remove (ArrayList.java:517)
+|        at (#72:1)
+
+jshell> numbersAl.remove(
+$10               $12               $15               $19               
+$21               $24               $27               $29               
+$31               $33               $35               $5                
+$6                $64               $65               $66               
+$67               $69               $7                $71               
+$72               $8                $9                iterator          
+newList           numbers           numbersAl         value             
+words             wordsAl           wordsArrayList    wordsIterator     
+wordsLinkedList   wordsVector       
+
+Signatures:
+boolean List<E extends Object>.remove(Object o)
+E List<E extends Object>.remove(int index)
+
+<press tab again to see documentation>
+
+jshell> numbersAl.remove(101)
+|  java.lang.IndexOutOfBoundsException thrown: Index 101 out-of-bounds for length 5
+|        at Preconditions.outOfBounds (Preconditions.java:64)
+|        at Preconditions.outOfBoundsCheckIndex (Preconditions.java:70)
+|        at Preconditions.checkIndex (Preconditions.java:248)
+|        at Objects.checkIndex (Objects.java:372)
+|        at ArrayList.remove (ArrayList.java:517)
+|        at (#73:1)
+
+jshell> numbersAl.remove(Integer.valueOf(101))
+$74 ==> true
+
+jshell> numbersAl
+numbersAl ==> [102, 103, 104, 105]
+
+jshell> clear()
+
+jshell> List<Integer> numbers = List.of(123,12,3,45);
+numbers ==> [123, 12, 3, 45]
+
+jshell> List<Integer> numbersAl = new ArrayList<>(numbers);
+numbersAl ==> [123, 12, 3, 45]
+
+jshell> numbersAl.sort(
+sort(   
+
+jshell> numbersAl.sort();
+|  Error:
+|  method sort in interface java.util.List<E> cannot be applied to given types;
+|    required: java.util.Comparator<? super java.lang.Integer>
+|    found: no arguments
+|    reason: actual and formal argument lists differ in length
+|  numbersAl.sort();
+|  ^------------^
+
+jshell> Collections.sort(numbersAl);
+
+jshell> numbersAl
+numbersAl ==> [3, 12, 45, 123]
+
+jshell> clear()
+
+ 
+jshell> Set<String> set = Set.of("Apple", "Banana", "Cat")
+set ==> [Banana, Apple, Cat]
+
+jshell> set.add("Apple");
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableSet.add (ImmutableCollections.java:281)
+|        at (#83:1)
+
+jshell> Set<String> hashset = new HashSet<>(set)
+hashset ==> [Apple, Cat, Banana]
+
+jshell> hashset.add("Apple")
+$85 ==> false
+
+jshell> hashset
+hashset ==> [Apple, Cat, Banana]
+
+jshell> hashset.add(2, "Apple")
+|  Error:
+|  no suitable method found for add(int,java.lang.String)
+|      method java.util.Collection.add(java.lang.String) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.util.Set.add(java.lang.String) is not applicable
+|        (actual and formal argument lists differ in length)
+|  hashset.add(2, "Apple")
+|  ^---------^
+
+jshell> Set<String> set = Set.of("A", "Z","D", "C", "B")
+set ==> [D, A, C, B, Z]
+
+jshell> Set<String> hashSet = new HashSet<>(set);
+hashSet ==> [A, B, C, D, Z]
+
+jshell> Set<Integer> numbers = new HashSet<>();
+numbers ==> []
+
+jshell> numbers.add(765432);
+$144 ==> true
+
+jshell> numbers.add(76543);
+$145 ==> true
+
+jshell> numbers.add(7654);
+$146 ==> true
+
+jshell> numbers.add(765);
+$147 ==> true
+
+jshell> numbers.add(76);
+$148 ==> true
+
+jshell> numbers
+numbers ==> [765432, 7654, 76, 765, 76543]
+
+jshell> Set<Integer> numbers = new LinkedHashSet<>();
+numbers ==> []
+
+jshell> numbers.add(765432);
+$151 ==> true
+
+jshell> numbers.add(76543);
+$152 ==> true
+
+jshell> numbers.add(7654);
+$153 ==> true
+
+jshell> numbers.add(765);
+$154 ==> true
+
+jshell> numbers.add(76);
+$155 ==> true
+
+jshell> numbers
+numbers ==> [765432, 76543, 7654, 765, 76]
+
+jshell> numbers.add(765789);
+$157 ==> true
+
+jshell> numbers
+numbers ==> [765432, 76543, 7654, 765, 76, 765789]
+
+jshell> numbers.add(76)
+$159 ==> false
+
+jshell> numbers
+numbers ==> [765432, 76543, 7654, 765, 76, 765789]
+
+jshell> Set<Integer> numbers = new TreeSet<>();
+numbers ==> []
+
+jshell> numbers.add(765432);
+$162 ==> true
+
+jshell> numbers.add(76543);
+$163 ==> true
+
+jshell> numbers.add(7654);
+$164 ==> true
+
+jshell> numbers.add(765);
+$165 ==> true
+
+jshell> numbers.add(76);
+$166 ==> true
+
+jshell> numbers
+numbers ==> [76, 765, 7654, 76543, 765432]
+
+jshell> numbers.add(76)
+$168 ==> false
+
+jshell> List<Character> characters = List.of('A','Z','A', 'B', 'Z','F'); 
+characters ==> [A, Z, A, B, Z, F]
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+ 
