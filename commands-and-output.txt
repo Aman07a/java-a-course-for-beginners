@@ -15,3 +15,55 @@ wordsLinkedList ==> [Apple, Bat, Cat]
 
 jshell> List<String> wordsVector = new Vector<String>(words)
 wordsVector ==> [Apple, Bat, Cat]
+
+jshell> wordsArrayList.add("Dog")
+$19 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Dog]
+
+jshell> wordsArrayList.add("Elephant")
+$21 ==> true
+
+jshell> wordsArrayList.add(2, "Ball")
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant]
+
+jshell> wordsArrayList.add("Ball")
+$24 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, Ball]
+
+jshell> List<String> newList = List.of("Yak","Zebra");
+newList ==> [Yak, Zebra]
+
+jshell> wordsArrayList.addAll(newList)
+$27 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, Ball, Yak, Zebra]
+
+jshell> wordsArrayList.set(6, "Fish")
+$29 ==> "Ball"
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, Fish, Yak, Zebra]
+
+jshell> wordsArrayList.remove(2)
+$31 ==> "Ball"
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Dog, Elephant, Fish, Yak, Zebra]
+
+jshell> wordsArrayList.remove("Dog")
+$33 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Elephant, Fish, Yak, Zebra]
+
+jshell> wordsArrayList.remove("Dog")
+$35 ==> false
+
+jshell> clear()
