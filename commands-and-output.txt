@@ -147,3 +147,5 @@ jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.length()).forEach(p -> 
 jshell> clear()
 
  
+jshell> IntStream.range(1,11).reduce( 0 , (n1,n2) -> n1+n2)
+$23 ==> 55
