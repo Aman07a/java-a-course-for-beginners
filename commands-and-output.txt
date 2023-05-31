@@ -82,3 +82,68 @@ jshell> numbers.stream().distinct().map(e -> e * e).forEach(e->System.out.printl
 49
 
 jshell> clear()
+
+ 
+jshell> IntStream.range(1,10).forEach(p->System.out.println(p))
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+jshell> IntStream.range(1,11).forEach(p->System.out.println(p))
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+jshell> IntStream.range(1,11).map(e -> e * e).forEach(p->System.out.println(p))
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.lower
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.lowercase()).forEach(p -> System.out.println(p))
+|  Error:
+|  cannot find symbol
+|    symbol:   method lowercase()
+|  List.of("Apple", "Ant", "Bat").stream().map(s->s.lowercase()).forEach(p -> System.out.println(p))
+|                                                 ^---------^
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.lowerCase()).forEach(p -> System.out.println(p))
+|  Error:
+|  cannot find symbol
+|    symbol:   method lowerCase()
+|  List.of("Apple", "Ant", "Bat").stream().map(s->s.lowerCase()).forEach(p -> System.out.println(p))
+|                                                 ^---------^
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.toLowerCase()).forEach(p -> System.out.println(p))
+apple
+ant
+bat
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.length()).forEach(p -> System.out.println(p))
+5
+3
+3
+
+jshell> clear()
+
+ 
