@@ -146,6 +146,147 @@ jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.length()).forEach(p -> 
 
 jshell> clear()
 
+ 
+jshell> IntStream.range(1,11).reduce( 0 , (n1,n2) -> n1+n2)
+$23 ==> 55
+
+jshell> List.of(23,12,34,53).stream().max()
+|  Error:
+|  method max in interface java.util.stream.Stream<T> cannot be applied to given types;
+|    required: java.util.Comparator<? super java.lang.Integer>
+|    found: no arguments
+|    reason: actual and formal argument lists differ in length
+|  List.of(23,12,34,53).stream().max()
+|  ^-------------------------------^
+
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2))
+$24 ==> Optional[53]
+
+jshell> $24.
+equals(            filter(            flatMap(           get()              
+getClass()         hashCode()         ifPresent(         ifPresentOrElse(   
+isPresent()        map(               notify()           notifyAll()        
+or(                orElse(            orElseGet(         orElseThrow(       
+stream()           toString()         wait(              
+
+jshell> $24.isPresent()
+$25 ==> true
+
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+$26 ==> 53
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|                                                    ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).
+equals(            filter(            flatMap(           get()              
+getClass()         hashCode()         ifPresent(         ifPresentOrElse(   
+isPresent()        map(               notify()           notifyAll()        
+or(                orElse(            orElseGet(         orElseThrow(       
+stream()           toString()         wait(              
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get().orElse(Integer.valueOf(10))
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get().orElse(Integer.valueOf(10))
+|                                                    ^^
+|  Error:
+|  cannot find symbol
+|    symbol:   method orElse(java.lang.Integer)
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get().orElse(Integer.valueOf(10))
+|  ^--------------------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).
+equals(            filter(            flatMap(           get()              
+getClass()         hashCode()         ifPresent(         ifPresentOrElse(   
+isPresent()        map(               notify()           notifyAll()        
+or(                orElse(            orElseGet(         orElseThrow(       
+stream()           toString()         wait(              
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).or(10)
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).or(10)
+|                                                    ^^
+|  Error:
+|  incompatible types: int cannot be converted to java.util.function.Supplier<? extends java.util.Optional<? extends java.lang.Object>>
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).or(10)
+|                                                               ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(10)
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(10)
+|                                                    ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get(0)
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get(0)
+|                                                    ^^
+|  Error:
+|  method get in class java.util.Optional<T> cannot be applied to given types;
+|    required: no arguments
+|    found: int
+|    reason: actual and formal argument lists differ in length
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get(0)
+|  ^-----------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(0).get()
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(0).get()
+|                                                    ^^
+|  Error:
+|  cannot find symbol
+|    symbol:   method get()
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(0).get()
+|  ^---------------------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0)).get()
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0)).get()
+|                                                    ^^
+|  Error:
+|  cannot find symbol
+|    symbol:   method get()
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0)).get()
+|  ^--------------------------------------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0))
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0))
+|                                                    ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2))
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2))
+|                                                    ^^
+
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+$27 ==> 53
+
+jshell> List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|  Error:
+|  illegal start of type
+|  List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|                  ^
+|  Error:
+|  cannot find symbol
+|    symbol:   method stream()
+|  List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|                     ^----^
+|  Error:
+|  missing return statement
+|  List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|  ^----------------------------------------------------------------------^
+
 jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
 $28 ==> 53
 
@@ -155,9 +296,32 @@ $29 ==> 12
 jshell> List.of(23,12,34,53).stream().filter(e -> e%2==1).forEach(e -> System.out.println(e))
 23
 53
- 
-jshell> IntStream.range(1,11).reduce( 0 , (n1,n2) -> n1+n2)
-$23 ==> 55
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==1).collect(Collection.toList())
+|  Error:
+|  cannot find symbol
+|    symbol:   method toList()
+|  List.of(23,12,34,53).stream().filter(e -> e%2==1).collect(Collection.toList())
+|                                                            ^---------------^
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==1).collect(Collectors.toList())
+$31 ==> [23, 53]
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==0).collect(Collectors.toList())
+$32 ==> [12, 34]
+
+jshell> IntStream.range(1,11).map(e -> e * e).collect(Collectors.toList())
+|  Error:
+|  method collect in interface java.util.stream.IntStream cannot be applied to given types;
+|    required: java.util.function.Supplier<R>,java.util.function.ObjIntConsumer<R>,java.util.function.BiConsumer<R,R>
+|    found: java.util.stream.Collector<java.lang.Object,capture#1 of ?,java.util.List<java.lang.Object>>
+|    reason: cannot infer type-variable(s) R
+|      (actual and formal argument lists differ in length)
+|  IntStream.range(1,11).map(e -> e * e).collect(Collectors.toList())
+|  ^-------------------------------------------^
+
+jshell> IntStream.range(1,11).map(e -> e * e)
+$33 ==> java.util.stream.IntPipeline$4@a7e666
 
 jshell> List.of(23,12,34,53).stream().filter(e -> e%2==0).collect(Collectors.toList())
 $34 ==> [12, 34]
@@ -173,3 +337,36 @@ $37 ==> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 jshell> clear()
 
+
+
+
+ 
+jshell> List.of(23,45,67,12).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) )
+$39 ==> Optional[12]
+
+jshell> $39.get()
+$40 ==> 12
+
+jshell> $39.isPresent()
+isPresent()   
+
+jshell> $39.isPresent()
+$41 ==> true
+
+jshell> List.of(23,45,67).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) )
+$42 ==> Optional.empty
+
+jshell> $42.isPresent()
+$43 ==> false
+
+jshell> $42.orElse(0)
+$45 ==> 0
+
+jshell> List.of(23,45,67).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
+$46 ==> 0
+
+jshell> List.of(23,45,67,34).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
+$47 ==> 34
+                        ,34).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
+Signatures:
+T Optional<T>.orElse(T other)
