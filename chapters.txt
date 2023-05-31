@@ -14,3 +14,4 @@ Finished Chapters
 - Chapter 13: Arrays and ArrayLists in Java Programming
 - Chapter 14: Java - Oriented Programming Again
 - Chapter 15: Collections in Java Programming
+- Chapter 16: Generics in Java Programming
