@@ -146,6 +146,30 @@ jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.length()).forEach(p -> 
 
 jshell> clear()
 
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+$28 ==> 53
+
+jshell> List.of(23,12,34,53).stream().min((n1,n2) -> Integer.compare(n1,n2)).get()
+$29 ==> 12
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==1).forEach(e -> System.out.println(e))
+23
+53
  
 jshell> IntStream.range(1,11).reduce( 0 , (n1,n2) -> n1+n2)
 $23 ==> 55
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==0).collect(Collectors.toList())
+$34 ==> [12, 34]
+
+jshell> IntStream.range(1,10).map(e -> e * e)
+$35 ==> java.util.stream.IntPipeline$4@7c29daf3
+
+jshell> IntStream.range(1,10).map(e -> e * e).boxed().collect(Collectors.toList())
+$36 ==> [1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+jshell> IntStream.range(1,11).map(e -> e * e).boxed().collect(Collectors.toList())
+$37 ==> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+jshell> clear()
+
