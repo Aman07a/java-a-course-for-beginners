@@ -19,4 +19,8 @@ public class MyCustomList<T> {
 		return list.toString();
 	}
 
+	public T get(int index) {
+		return list.get(index);
+	}
+
 }
