@@ -8,3 +8,22 @@ jshell> list.stream().forEach(
 4
 7
 9
+jshell> list.stream().filter(
+   ...>                element -> element%2 == 1)
+$3 ==> java.util.stream.ReferencePipeline$2@29ca901e
+
+jshell> list.stream().filter(
+   ...>                element -> element%2 == 1).
+   ...>              forEach( 
+   ...>                element -> System.out.println(element))
+1
+7
+9
+
+jshell> list.stream().filter(element -> element%2==1).forEach(element->System.out.println(element))
+1
+7
+9
+
+jshell> list.stream().filter(element -> element%2==0).forEach(element->System.out.println(element))
+4
