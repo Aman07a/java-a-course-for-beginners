@@ -54,6 +54,20 @@ public class LambdaBehindTheScreensRunner {
 		// Consumer<? super T> action
 		// void accept(T t);
 
+		// 1.Storing functions in variables
+		// 2.Passing functions to methods <=
+		// 3.Returning functions from methods
+
+		Predicate<? super Integer> evenPredicate = createEvenPredicate();
+		Predicate<? super Integer> oddPredicate = n -> n % 2 == 1;
+
+		List.of(23, 43, 34, 45, 36, 48).stream().filter(evenPredicate).map(n -> n * n)
+				.forEach(e -> System.out.println(e));
+
+	}
+
+	private static Predicate<? super Integer> createEvenPredicate() {
+		return n -> n % 2 == 0;
 	}
 
 }
