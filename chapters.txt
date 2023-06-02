@@ -17,3 +17,4 @@ Finished Chapters
 - Chapter 16: Generics in Java Programming
 - Chapter 17: Introduction to Functional Programming in Java
 - Chapter 18: Introduction to Threads And Concurrency in Java
+- Chapter 19: Introduction to Exception Handling in Java
