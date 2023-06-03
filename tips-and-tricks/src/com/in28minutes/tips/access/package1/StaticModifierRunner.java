@@ -2,6 +2,7 @@ package com.in28minutes.tips.access.package1;
 
 class Player {
 	private String name;
+
 	private static int count = 0;
 
 	public Player(String name) {
@@ -12,6 +13,15 @@ class Player {
 
 	static public int getCount() {
 		return count;
+	}
+
+	public String getName() {
+		System.out.println(count);
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }
