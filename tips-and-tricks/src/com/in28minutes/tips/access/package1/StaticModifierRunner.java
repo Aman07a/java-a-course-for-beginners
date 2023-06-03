@@ -10,7 +10,7 @@ class Player {
 		count++;
 	}
 
-	public int getCount() {
+	static public int getCount() {
 		return count;
 	}
 
@@ -21,10 +21,10 @@ public class StaticModifierRunner {
 	public static void main(String[] args) {
 
 		Player player1 = new Player("Ronaldo");
-		System.out.println(player1.getCount());
+		System.out.println(Player.getCount());
 
 		Player player2 = new Player("Federer");
-		System.out.println(player2.getCount());
+		System.out.println(Player.getCount());
 
 	}
 
