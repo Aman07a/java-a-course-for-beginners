@@ -1,9 +1,11 @@
 package com.in28minutes.learnspringframework.game;
 
+// PacmanGame
 public class GameRunner {
-	MarioGame game;
 
-	public GameRunner(MarioGame game) {
+	GamingConsole game;
+
+	public GameRunner(GamingConsole game) {
 		this.game = game;
 	}
 
@@ -14,5 +16,4 @@ public class GameRunner {
 		game.left();
 		game.right();
 	}
-
 }
