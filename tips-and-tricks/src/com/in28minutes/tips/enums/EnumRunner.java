@@ -3,7 +3,18 @@ package com.in28minutes.tips.enums;
 import java.util.Arrays;
 
 enum Season {
-	SUMMER, WINTER, FALL, SPRING;
+	SPRING(4), SUMMER(1), WINTER(2), FALL(3);
+
+	private int value;
+
+	private Season(int value) {
+		this.value = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
 	// 0,1,2,3
 }
 
@@ -16,6 +27,7 @@ public class EnumRunner {
 		Season season1 = Season.valueOf("WINTER");
 		System.out.println(season1);
 		System.out.println(Season.SPRING.ordinal());
+		System.out.println(Season.SPRING.getValue());
 
 		System.out.println(Arrays.toString(Season.values()));
 
