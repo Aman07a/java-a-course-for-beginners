@@ -232,4 +232,8 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+learn-spring-framework/mvnw
+learn-spring-framework/mvnw.cmd
+learn-spring-framework/.mvn/**
+
 # End of https://www.toptal.com/developers/gitignore/api/java,node,eclipse
