@@ -21,3 +21,4 @@ Finished Chapters
 - Chapter 20: Files and Directories in Java
 - Chapter 21: More Concurrency with Concurrent Collections and Atomic Operations
 - Chapter 22: Java Tips
+- Chapter 23: New Course Additions - An Overview
