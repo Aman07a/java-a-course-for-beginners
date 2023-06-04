@@ -22,3 +22,4 @@ Finished Chapters
 - Chapter 21: More Concurrency with Concurrent Collections and Atomic Operations
 - Chapter 22: Java Tips
 - Chapter 23: New Course Additions - An Overview
+- Chapter 24: Java New Features - Java 10 to Java 20
