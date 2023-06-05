@@ -1,11 +1,14 @@
 package com.in28minutes.learnspringframework02.game;
 
-//PacmanGame
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
 
-	GamingConsole game;
+	private GamingConsole game;
 
-	public GameRunner(GamingConsole game) {
+	public GameRunner(@Qualifier("SuperContraGameQualifier") GamingConsole game) {
 		this.game = game;
 	}
 
