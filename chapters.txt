@@ -23,3 +23,4 @@ Finished Chapters
 - Chapter 22: Java Tips
 - Chapter 23: New Course Additions - An Overview
 - Chapter 24: Java New Features - Java 10 to Java 20
+- Chapter 25: Getting Started with Java Spring Framework
