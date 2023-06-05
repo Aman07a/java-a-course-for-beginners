@@ -232,4 +232,8 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+**/mvnw
+**/mvnw.cmd
+**/.mvn/**
+
 # End of https://www.toptal.com/developers/gitignore/api/java,node,eclipse
