@@ -27,3 +27,4 @@ Finished Chapters
 - Chapter 26: Using Spring Framework to Create and Manage Your Java Objects
 - Chapter 27: Exploring Spring Framework Advanced Features
 - Chapter 28: Getting Started with Spring Boot
+- Chapter 29: Simple REST API with Spring Boot and Spring Data JPA
