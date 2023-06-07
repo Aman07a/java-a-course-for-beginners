@@ -1,4 +1,3 @@
--- Using Docker to Launch MySQL
 insert into COURSE (ID, AUTHOR, NAME)
 values (10001, 'in28minutes', 'Learn Microservices');
 insert into COURSE (ID, AUTHOR, NAME)
