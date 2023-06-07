@@ -1,9 +1,17 @@
 package com.in28minutes.learnspringboot.courses.bean;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Course {
 
+	@Id
+	@GeneratedValue
 	private long id;
 
+	// @Column(name = "course_name")
 	private String name;
 
 	private String author;
